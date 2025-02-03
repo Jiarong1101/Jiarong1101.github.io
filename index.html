@@ -1,13 +1,113 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiarong Chang | Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .section-title {
+            margin: 40px 0 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Jiarong Chang</h1>
+        <p>Graduate Student in Computer Science | Passionate Developer</p>
+        <p>Email: <a href="mailto:jiarong20001101@gmail.com" class="text-white">jiarong20001101@gmail.com</a></p>
+    </header>
 
-    <body>
-        <p>Hello over here</p>
-        <script>
+    <!-- Profile Section -->
+    <section class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>Dedicated graduate student skilled in designing, developing, and addressing complex web applications using Python, Java, JavaScript, and other technologies. Experienced in delivering successful projects, including a travel website and an award-winning interactive volleyball application.</p>
+    </section>
 
-        </script>
-    </body>
+    <!-- Education Section -->
+    <section class="container">
+        <h2 class="section-title">Education</h2>
+        <ul>
+            <li><strong>Master of Science (M.S.) – Computer Science</strong> (2023-2025) <br> Stevens Institute of Technology, Hoboken, NJ</li>
+            <li><strong>Bachelor of Science (B.S.) – Computer Science and Information Management</strong> (2019-2023) <br> Soochow University, Taipei, Taiwan</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="project-card p-3">
+                    <h5>Bottled Liquefied Petroleum Gas Delivery Prediction System</h5>
+                    <p>Developed a Python-based system using tkinter and SQLite to assist accounting staff in analyzing customer reorder intervals and predicting next deliveries.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="project-card p-3">
+                    <h5>NBA Player Performance and Salary Analysis</h5>
+                    <p>Analyzed player performance metrics and salary data using Python, PCA, and clustering algorithms to provide actionable insights.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="project-card p-3">
+                    <h5>Interactive Volleyball Training Application</h5>
+                    <p>Developed an Android app with real-time feedback to track and analyze volleyball performance, integrating Flask and OpenCV.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="project-card p-3">
+                    <h5>Sunshine Travel Website</h5>
+                    <p>Led the development of a travel website using HTML, CSS, and JavaScript, focusing on responsive design and user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>If you'd like to collaborate or have any inquiries, feel free to reach out:</p>
+        <ul>
+            <li>Email: <a href="mailto:jiarong20001101@gmail.com">jiarong20001101@gmail.com</a></li>
+            <li>Phone: 201-204-2111</li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/jiarong-chang-b9058b285" target="_blank">linkedin.com/in/jiarong-chang-b9058b285</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Jiarong Chang. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
