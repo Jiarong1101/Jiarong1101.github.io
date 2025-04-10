@@ -37,21 +37,13 @@ ul{
     display: none !important;
 }
 
-.section{
+.section {
     background-color: var(--bg-black-900);
-    min-height: 100vh;
-    display: block;
+    display: flex;
+    justify-content: center; /* 或 flex-end 讓內容靠右 */
+    align-items: center;
     padding: 0 30px;
-    opacity: 1;              /* 0:完全透明; 1:完全不透明 */
-    position: fixed;
-    left: 270px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: all 0.3s ease;
+    margin-left: 270px; /* 為了避開固定的 aside */
 }
 .section.back-section{
     z-index: 1;
@@ -59,17 +51,6 @@ ul{
 .section.active{
     z-index: 2;
     opacity: 1;
-    animation: slideSection 1s ease;
-}
-@keyframes slideSection{
-    0%
-    {
-        transform: translateX(100%);
-    }
-    100%
-    {
-        transform: translateX(0%);
-    }
 }
 
 .padd-15{
@@ -79,7 +60,6 @@ ul{
 .container{
     max-width: 1100px;
     width: 100%;
-    margin: auto;           /* 水平居中 */ 
 }
 .section .container{
     padding-top: 60px;
@@ -139,7 +119,7 @@ ul{
 .shadow-dark{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); /* 水平偏移 0 垂直偏移 0 模糊半徑 20px 顏色15%透明 */
 }
-/* aside */
+
 .aside{
     width: 270px;
     background: var(--bg-black-100);
@@ -158,7 +138,7 @@ ul{
 .aside .logo{
     position: absolute;         /* 根據父元素(.aside)的定位 */
     top: 50px;
-    font-size: 30px;
+    font-size: 50px;
     text-transform: capitalize; /* 第一字母大寫其他小寫 */
 }
 .aside .logo a{
@@ -300,13 +280,13 @@ ul{
     color: var(--text-black-900);
 }
 
-
 /* home */
 .home{
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
 }
+
 .home .home-info{
     flex: 0 0 60%;
     max-width: 60%;
