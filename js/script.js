@@ -210,3 +210,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav a");
+  
+    let currentId = "";
+  
+    for (let i = 0; i < sections.length; i++) {
+      const sectionTop = sections[i].offsetTop;
+      const sectionHeight = sections[i].offsetHeight;
+  
+      if (window.scrollY >= sectionTop - 150) {
+        currentId = sections[i].getAttribute("id");
+      }
+    }
+  
+    const scrollBottom = window.innerHeight + window.scrollY;
+    const documentHeight = document.body.offsetHeight;
+    if (Math.abs(scrollBottom - documentHeight) < 5) {
+      currentId = sections[sections.length - 1].getAttribute("id");
+    }
+  
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentId)) {
+        link.classList.add("active");
+      }
+    });
+  });
+  
