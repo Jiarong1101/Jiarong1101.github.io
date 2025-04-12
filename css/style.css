@@ -37,8 +37,11 @@ ul{
     display: none !important;
 }
 
-.section {
+.main-content{
     background-color: var(--bg-black-900);
+}
+
+.section {
     display: flex;
     justify-content: center; /* 或 flex-end 讓內容靠右 */
     align-items: center;
@@ -58,7 +61,7 @@ ul{
     padding-right: 15px;
 }
 .container{
-    max-width: 1100px;
+    max-width: 1500px;
     width: 100%;
 }
 .section .container{
@@ -71,7 +74,7 @@ ul{
     margin-bottom: 60px;
 }
 .section-title h2{
-    font-size: 40px;
+    font-size: 50px;
     color: var(--text-black-900);
     font-weight: 700;
     position: relative;
@@ -103,7 +106,7 @@ ul{
     position: relative;
 }
 .btn{
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 500;
     padding: 12px 35px;
     color: white;
@@ -145,13 +148,13 @@ ul{
     color:var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;         /* 上下 左右距離 */
-    font-size: 30px;
+    font-size: 40px;
     letter-spacing: 5px;
     position: relative;
 }
 .aside .logo a span{
     font-family: 'Clicker Script', cursive; /* 如果 Clicker 不能加載 則用 cursive */
-    font-size: 40px;
+    font-size: 50px;
 }
 .aside .logo a::before{
     content: '';
@@ -160,8 +163,8 @@ ul{
     height: 20px;
     border-bottom: 5px solid var(--skin-color);
     border-left: 5px solid var(--skin-color);
-    bottom: 0;
-    left: 0;
+    bottom: -5px;
+    left: -5px;
 }
 .aside .logo a::after{
     content: '';
@@ -232,12 +235,12 @@ ul{
     display: block;
 }
 .aside .nav li a{
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 600;
     display: block;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
-    padding: 5px 15px;
+    padding: 30px 15px;
 }
 .aside .nav li a.active{
     color: var(--skin-color);
@@ -254,14 +257,15 @@ ul{
     gap: 15px; /* 圖標之間的間距 */
 }
 .aside .social a {
-    font-size: 24px;
+    font-size: 30px;
     color: var(--text-black-900);
     border: 2px solid var(--text-black-900);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     line-height: 38px;
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     transition: 0.3s ease;
 }
@@ -292,33 +296,39 @@ ul{
     max-width: 60%;
 }
 h3.hello{
-    font-size: 28px;
+    font-size: 38px;
     margin: 15px 0;
 }
 h3.hello span{
     font-family: 'Clicker Script', cursive;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     color: var(--skin-color);
 }
 h3.my-profession{
-    font-size: 30px;
+    font-size: 38px;
     margin: 15px 0;
 }
 .typing
 {
     color: var(--skin-color);
 }
+
 .home-info p{
     margin-bottom: 70px;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--text-black-700);
 }
-.home .home-img{
+/* .home .home-img{
     flex: 0 0 40%;
     max-width: 40%;
     text-align: center;
     position: relative;
+}
+.home .home-img img{
+    margin: auto;
+    border-radius: 5px;
+    height: 500px;
 }
 .home-img::after{
     content: '';
@@ -327,9 +337,10 @@ h3.my-profession{
     width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
+    right: 80px;
+    bottom: -30px;
 }
+
 .home-img::before{
     content: '';
     position: absolute;
@@ -337,14 +348,51 @@ h3.my-profession{
     width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
-    left: 20px;
+    left: 80px;
     top: -40px;
-}
-.home .home-img img{
+} */
+
+.home-img {
+    position: relative;
+    max-width: 350px;
     margin: auto;
-    border-radius: 5px;
-    height: 400px;
 }
+
+.home-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* 通用角角樣式 */
+.home-img::before,
+.home-img::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* 左上角 */
+.home-img::before {
+    top: -50px;
+    left: -50px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+}
+
+/* 右下角 */
+.home-img::after {
+    bottom: -50px;
+    right: -50px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+}
+
+
+
 /* About */
 .about .about-content{
     flex: 0 0 100%;     /* 父容器的100%寬度 */
@@ -356,13 +404,18 @@ h3.my-profession{
 {
     color: var(--text-black-700);
 }
+.about .about-content .about-text h2
+{
+    font-size: 38px;
+}
 .about .about-content .personal-info
 {
     color: var(--text-black-700);
+    font-size: 24px;
 }
-.about .about-content .personal-info .hire-me
+.about .about-content .personal-info .contact-me
 {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .about .about-content .skills .row {
@@ -382,7 +435,7 @@ h3.my-profession{
 }
 
 .about .about-content .skills .skill-img img {
-    width: 30px; /* 調整圖片大小 */
+    width: 40px; /* 調整圖片大小 */
     height: auto;
 }
 
@@ -400,7 +453,8 @@ h3.my-profession{
     margin-top: 30px;
 }
 .about .about-content h3.title{
-    font-size: 24px;
+    font-size: 38px;
+    margin-top: 30px;
     margin-bottom: 30px;
     font-weight: 700;
     color: var(--text-black-700);
@@ -422,6 +476,14 @@ h3.my-profession{
     padding-left: 37px;
     padding-bottom: 50px;
 }
+.about .about-content .timeline .timeline-item .timeline-date,
+.about .about-content .timeline .timeline-item .timeline-text{
+    font-size: 20px;
+}
+.about .about-content .timeline .timeline-item .timeline-title{
+    font-size: 25px;
+}
+
 .about .about-content .timeline .timeline-item:last-child{
     padding-bottom: 0;      /* 最後一個子元素的padding-bottom 設為 0 */
 }
@@ -481,13 +543,14 @@ h3.my-profession{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5%;
+    /* padding: 0.5%; */
     border-radius: 10px;
-    background-color: var(--bg-black-100);
+    /* background-color: var(--bg-black-100); */
 }
 
 .project-item img {
     max-width: 100%;
+    border: 10px solid var(--bg-black-100);
     border-radius: 10px;
     padding: 0;
 }
@@ -499,7 +562,7 @@ h3.my-profession{
 
 .project-content .project-heading h1 {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 15px;
     color: var(--text-black-900);
 }
@@ -517,17 +580,22 @@ h3.my-profession{
     margin-right: 2%;
     background-color: var(--bg-black-0);
     border-radius: 20px;
-    padding: 5px 5px;
+    padding: 5px 10px;
 }
 
 .project-content .project-technology span {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 20px;
     color: var(--text-black-900);
 }
 
+.project-content .project-text{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .project-content .project-text p {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 28px;
     color: var(--text-black-700);
     margin: 15px 0px;
@@ -541,11 +609,11 @@ h3.my-profession{
 .project-content .project-button button {
     background-color: rgb(37, 99, 235);
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     width: auto;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -635,43 +703,45 @@ h3.my-profession{
 }
 
 /* awards */
-.awards .container{
+.activity .container{
     padding-bottom: 40px;
 }
-.awards .activity-heading,
-.awards .awards-heading{
+.activity .activity-heading{
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
 }
-.awards .container .section-title-activity{
+.activity .container .section-title-activity{
     margin-top: 100px;
 }
-.awards .activity-heading h2,
-.awards .awards-heading h2{
+.activity .activity-heading h2{
     color: var(--text-black-900);
     font-weight: 500;
 }
-.awards .activity-item,
-.awards .awards-item{
-    width: 400px;
+.activity .activity-item{
+    width: 450px;
     margin-bottom: 30px;
+    transition: all 0.5s ease;
 }
-.awards .activity-item-inner,
-.awards .awards-item-inner{
+.activity .activity-item:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+.activity .activity-item-inner{
     position: relative;
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
 }
-.awards .activity-item-inner .activity-img img,
-.awards .awards-item-inner .awards-img img{
+.activity .activity-item-inner .activity-img{
+    cursor: pointer;
+}
+.activity .activity-item-inner .activity-img img{
     width: 100%;
     height: 100%;
     display: block; /* 去除多餘間隙 */
 }
-.awards .activity-item-inner .activity-img .activity-info-box,
-.awards .awards-item-inner .awards-img .awards-info-box
+.activity .activity-item-inner .activity-img .activity-info-box
 {
     position: absolute;
     bottom: 0;
@@ -685,43 +755,41 @@ h3.my-profession{
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.awards .activity-item-inner:hover .activity-info-box,
-.awards .awards-item-inner:hover .awards-info-box
+.activity .activity-item-inner:hover .activity-info-box
 {
     opacity: 1;
     transform: translateY(0);
 }
-.awards .activity-item-inner .activity-img .activity-info-box h3,
-.awards .awards-item-inner .awards-img .awards-info-box h3
+.activity .activity-item-inner .activity-img .activity-info-box h3
 {
     text-align: center;
 }
-.awards .activity-item-inner .activity-img .activity-info-box p,
-.awards .awards-item-inner .awards-img .awards-info-box p
+.activity .activity-item-inner .activity-img .activity-info-box p
 {
     text-align: center;
 }
-.awards .activity-item-inner .activity-img .activity-info-box i,
-.awards .awards-item-inner .awards-img .awards-info-box i
+.activity .activity-item-inner .activity-img .activity-info-box i
 {
     position: absolute;
     right: 1px;
     top: 1px;
     font-size: 30px;
-    cursor: pointer;
 }
 
 /* contact */
 .contact-title{
     color: var(--skin-color);
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
     margin-bottom: 60px;
+}
+.contact .section-title{
+    margin-bottom: 100px;
 }
 .contact-sub-title{
     color: var(--text-black-900);
     text-align: center;
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 60px;
 }
 .contact .contact-info-item{
@@ -734,18 +802,18 @@ h3.my-profession{
     display: inline-block;
 }
 .contact .contact-info-item .icon .fa{
-    font-size: 25px;
+    font-size: 45px;
     color: var(--skin-color);
 }
 .contact .contact-info-item h4{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
     color: var(--text-black-900);
     text-transform: capitalize;
     margin: 15px 0 5px;
 }
 .contact .contact-info-item p{
-    font-size: 16px;
+    font-size: 20px;
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
@@ -772,7 +840,7 @@ h3.my-profession{
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     padding: 10px 25px;
-    font-size: 16px;
+    font-size: 20px;
     color: var(--text-black-700);
     transition: all 0.3s ease;
 }
@@ -784,11 +852,17 @@ h3.my-profession{
 }
 .contact .contact-form .btn{
     height: 50px;
-    padding: 0 50px;
+    padding: 0 35px;
 }
 
-
 @media (max-width:1435px){  /* 寬度小於1200px時，做以下事情 */
+    .section {
+        margin-left: 0px; /* 為了避開固定的 aside */
+        transition: all 0.3s ease;
+    }
+    .section.open{
+        margin-left: 270px;
+    }
     .section .container
     {
         padding-top: 70px;
@@ -819,7 +893,7 @@ h3.my-profession{
     }
 }
 
-@media (max-width:1150px){
+@media (max-width:1570px){
     
     .project .row
     {
@@ -831,7 +905,7 @@ h3.my-profession{
     .project .project-item
     {
         flex: 0 0 100%;
-        max-width: 90%;
+        max-width: 80%;
     }
     .project .project-content
     {
@@ -851,12 +925,23 @@ h3.my-profession{
     
 }
 
-@media (max-width:985px){
-    
-    .contact .contact-info-item{
-        flex: 0 0 50%;
-        max-width: 50%;
+@media (max-width: 1362px) {
+    .home.section.open .home-info{
+        flex: 0 0 100%;
+        max-width: 100%;
     }
+    .home.section.open .home-img {
+      display: none;
+    }
+    .about.section.open .about-content .education,
+    .about.section.open .about-content .skills,
+    .about.section.open .about-content .personal-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+  }
+
+@media (max-width:1092px){
     .home .home-info{
         flex: 0 0 100%;
         max-width: 100%;
@@ -866,13 +951,25 @@ h3.my-profession{
     }
 }
 
-@media (max-width:767px){
-    .contact .contact-form .col-6,
-    .contact .contact-info-item,
-    .portfolio .portfolio-item,
+@media (max-width:985px){
+    
+    .contact .contact-info-item{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
     .about .about-content .education,
     .about .about-content .skills,
     .about .about-content .personal-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width:767px){
+    .contact .contact-form .col-6,
+    .contact .contact-info-item,
+    .portfolio .portfolio-item{
         flex: 0 0 100%;
         max-width: 100%;
     }
