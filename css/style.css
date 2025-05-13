@@ -228,7 +228,7 @@ ul{
     top: 0;
 }
 .aside .nav{
-    margin-top: clamp(0px, 2vh, 50px);
+    margin-top: clamp(0px, 0vh, 50px);
 }
 .aside .nav li{
     margin-bottom: 20px;
@@ -988,8 +988,11 @@ h3.my-profession{
     }
 }
 
-/* @media (max-height:570px){
-    .aside .nav li a{
-        padding: clamp(0px, 1vh, 30px) 15px;
+@media (max-height:560px){
+    .aside{
+        display: none;
     }
-} */
+    .section.open{
+        margin-left: 0px;
+    }
+}
