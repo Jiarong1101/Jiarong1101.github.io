@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("scroll", () => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll(".nav a");
   
     let currentId = "";
@@ -239,4 +239,3 @@ window.addEventListener("scroll", () => {
       }
     });
   });
-  
