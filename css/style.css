@@ -140,7 +140,7 @@ ul{
 }
 .aside .logo{
     position: absolute;         /* 根據父元素(.aside)的定位 */
-    top: 50px;
+    top: clamp(0px, 2vh, 50px);
     font-size: 50px;
     text-transform: capitalize; /* 第一字母大寫其他小寫 */
 }
@@ -228,7 +228,7 @@ ul{
     top: 0;
 }
 .aside .nav{
-    margin-top: 50px;
+    margin-top: clamp(0px, 2vh, 50px);
 }
 .aside .nav li{
     margin-bottom: 20px;
@@ -240,7 +240,8 @@ ul{
     display: block;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
+    padding: clamp(0px, 2vh, 30px) 15px;
 }
 .aside .nav li a.active{
     color: var(--skin-color);
@@ -278,8 +279,8 @@ ul{
 .aside .copyright
 {
     position: absolute;
-    bottom: 10px; /* 控制距離底部的距離 */
     font-size: 15px;
+    bottom: 10px; /* 控制距離底部的距離 */
     left: 50%;
     transform: translateX(-50%); /* 讓它水平置中 */
     color: var(--text-black-900);
@@ -975,3 +976,20 @@ h3.my-profession{
         max-width: 100%;
     }
 }
+
+@media (max-height:665px){
+    .aside .nav li a{
+        padding: clamp(0px, 1vh, 30px) 15px;
+    }
+    .aside .social a {
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* @media (max-height:570px){
+    .aside .nav li a{
+        padding: clamp(0px, 1vh, 30px) 15px;
+    }
+} */
