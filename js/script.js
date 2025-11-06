@@ -1,6 +1,6 @@
 // Typing animation
 let typed = new Typed(".typing", {
-    strings:["Web Developer", "Android Developer", "Software Engineer"],
+    strings:["全端工程師", "軟體工程師", "網頁設計工程師"],
     typeSpeed:100,
     BackSpeed:60,
     loop:true
